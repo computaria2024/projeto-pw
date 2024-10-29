@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concatenação</title>
+</head>
+<body>
+    <h3>Concatenação de Campos</h3>
+
+    <form action="mailto:igort10rocha@gmail.com" method="post">
+        Digite o Nome ................. : <input type="text" name="f_nome"> <br> <br>
+        Digite o sobrenome ............ : <input type="text" name="f_sobrenome"> <br> <br>
+    </form>
+    <script>
+        var js_name, js_lastname;
+        js_name = window.prompt("Qual é o seu nome?", 'Digite nesta caixa de texto');
+        js_lastname = window.prompt("Qual é o seu sobrenome?", 'Digite nesta caixa de texto');
+        document.write('Olá' + js_name + js_lastname + 'Seja bem-vindo(a) ao mundo da programação!');
+</body>
+</html>
