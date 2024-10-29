@@ -9,24 +9,36 @@
 <body>
     <h3>Concatenação de Campos</h3>
 
-    <form action="mailto:igort10rocha@gmail.com" method="post">
+    <form name="FormConcatena" action="mailto:igort10rocha@gmail.com" method="post">
         Digite o Nome ................. : <input type="text" name="f_nome"> <br> <br>
-        
+
         Digite o sobrenome ............ : <input type="text" name="f_sobrenome"> <br> <br>
 
-        <input type="button" name="btn_concatena" value="Concatenar" xxxxx>
+        <input type="button" name="btn_concatena" value="Concatenar" onclick="concatenaCampos()">
 
         <input type="reset" name="btn_limpar" value="Limpar">
 
     </form>
 
-    <!--
-    <script>
-        var js_name, js_lastname;
-        js_name = window.prompt("Qual é o seu nome?", 'Digite nesta caixa de texto');
-        js_lastname = window.prompt("Qual é o seu sobrenome?", 'Digite nesta caixa de texto');
-        document.write('Olá' + js_name + js_lastname + 'Seja bem-vindo(a) ao mundo da programação!');
-        -->
+    <!--Criando codido javascript-->
+
+    <script type="text/javascript">
+        //OBJETIVO: Capturar nome e sobrenome e concatenar formando um nome completo
+        var js_nome, js_sobrenome, js_nome_completo;
+
+        function concatenaCampos() {
+            // Entrada de Dados
+            js_nome = document.FormConcatena.f_nome.value;
+            js_sobrenome = document.FormConcatena.f_sobrenome.value;
+
+            // Processamento de dados
+            js_nome_completo = js_nome + " " + js_sobrenome;
+
+            // Saída de Dados
+            window.alert("Olá " + js_nome_completo);
+        }
+
+    </script>
 
 </body>
 </html>
