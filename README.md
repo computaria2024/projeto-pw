@@ -1,2 +1,4 @@
-# projeto-pw
-Projeto 2º semestre - Programação Web
+# Programação Web
+Aulas no 2º semestre - Utilizando JAVASCRIPT
+
+
