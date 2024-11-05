@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch</title>
+</head>
+<body>
+    <form action="" method="post" name="FormCalendario">
+        Digite o mês(01 a 12): <input type="text" name="f_nome" size="18" maxlength="15">
+
+        <input type="button" name="btn_processar" value="Processar" onclick="verificaMes()">
+        <input type="reset" name="btn_cancelar" value="Cancelar">
+        <p></p>
+        O mês correspondente é <input type="text" name="f_resultado" size="18" maxlength="15">
+
+
+    </form>
+
+    <script>
+        //DEFINICAO DE VARIAVEIS
+        var js_mes;
+
+        function verificaMes(){
+            //ENTRADA DE DADOS
+            js_mes = parseInt(document.FormCalendario.f_nome.value);
+
+            //PROCESSAMENTO
+            switch(js_mes){
+                case 1:
+                    document.FormCalendario.f_resultado.value = 'Janeiro';
+                    break;
+                case 2:
+                    document.FormCalendario.f_resultado.value = 'Fevereiro';
+                    break;
+                case 3:
+                    document.FormCalendario.f_resultado.value = 'Março';
+                    break;
+                case 4:
+                    document.FormCalendario.f_resultado.value = 'Abril';
+                    break;
+                case 5:
+                    document.FormCalendario.f_resultado.value = 'Maio';
+                    break;
+                case 6:
+                    document.FormCalendario.f_resultado.value = 'Junho';
+                    break;
+                case 7:
+                    document.FormCalendario.f_resultado.value = 'Julho';
+                    break;
+                case 8:
+                    document.FormCalendario.f_resultado.value = 'Agosto';
+                    break;
+                case 9:
+                    document.FormCalendario.f_resultado.value = 'Setembro';
+                    break;
+                case 10:
+                    document.FormCalendario.f_resultado.value = 'Outubro';
+                    break;
+                case 11:
+                    document.FormCalendario.f_resultado.value = 'Novembro';
+                    break;
+                case 12:
+                    document.FormCalendario.f_resultado.value = 'Dezembro';
+                    break;
+                default:
+                    document.FormCalendario.f_resultado.value = 'Mês inválido';
+            }
+        }
+    </script>
+</body>
+</html>
