@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de salário</title>
+
+    <link rel="stylesheet" href="salario.css">
+</head>
+<body>
+    <form action="" method="post" name="FormSalário">
+        <h1>CÁLCULO SALARIAL</h1>
+
+        <!--quantidade de hrs-->
+        Digite a quantidade de horas trabalhadas(135 a 180): <input type="text" name="qntd-horas" size="18" maxlength="15">
+
+        <!--valor das hrs-->  
+        Digite o valor da hora trabalhada(10 a 20): <input type="text" name="valor-horas" size="18" maxlength="15">
+
+        <!--Desconto inss-->  
+        Digite o valor do desconto do INSS(5 a 15): <input type="text" name="inss" size="18" maxlength="15">
+
+        <!--RESET e PROCESSAR-->  
+        <input type="button" name="btn_processar" value="Processar" onclick="classificaSalario()">
+        <input type="reset" name="btn_limpar" value="Limpar">
+        
+        <!--Classificação salarial-->  
+        <p></p>
+        A classificação salarial é <input type="text" name="salario" size="18" maxlength="15">
+
+
+    </form>
+
+    <script>
+        classificaSalario(){
+
+        }
+    </script>
+</body>
+</html>
