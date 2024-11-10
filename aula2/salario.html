@@ -9,22 +9,23 @@
     <link rel="stylesheet" href="salario.css">
 </head>
 <body>
-    <form action="" method="post" name="FormSalário">
+    <form action="" method="post" name="FormSalario">
         <h1>CÁLCULO SALARIAL</h1>
 
         <!--quantidade de hrs-->
-        Digite a quantidade de horas trabalhadas(135 a 180): <input type="text" name="qntd-horas" size="18" maxlength="15">
+        Digite a quantidade de horas trabalhadas<br>(135 a 180): <br> <input placeholder="Número de horas no mês" class="input" place type="text" name="qntd_horas" size="18" maxlength="15">
+        <br><br>
 
         <!--valor das hrs-->  
-        Digite o valor da hora trabalhada(10 a 20): <input type="text" name="valor-horas" size="18" maxlength="15">
+        Digite o valor da hora trabalhada<br>(10 a 20): <br> <input placeholder="Valor por hora" class="input" type="text" name="valor_horas" size="18" maxlength="15">
+        <br><br>
 
         <!--Desconto inss-->  
-        Digite o valor do desconto do INSS(5 a 15): <input type="text" name="inss" size="18" maxlength="15">
+        Digite o valor do desconto do INSS(5 a 15): <br> <input placeholder="Porcentagem de desconto INSS" class="input" type="text" name="inss" size="18" maxlength="15">
+        <br><br>
 
         <!--RESET e PROCESSAR-->  
-        <br><br>
-         
-        <button>
+        <button type="button" onclick="classificaSalario()">
         <span class="span-mother">
             <span>C</span>
             <span>a</span>
@@ -46,18 +47,49 @@
         </span>
         </button>
 
-        
-        <!--Classificação salarial-->  
+        <!-- Salário Bruto -->
         <p></p>
-        A classificação salarial é <input type="text" name="salario" size="18" maxlength="15">
+        Salário BRUTO: <br> <input placeholder="O salário bruto aparecerá aqui!" class="input" type="text" name="salarioBruto" size="18" maxlength="15">
+        <br><br>
 
+        <!-- Total desconto INSS -->
+        <p></p>
+        Total de Desconto INSS: <br> <input placeholder="Valor descontado INSS" class="input" type="text" name="descontoINSS" size="18" maxlength="8"> 
+        <br><br>
 
+        <!-- Salário líquido + classificação -->
+        <p></p>
+        Salário Líquido: <br> <input placeholder="Salário recebido" class="input" type="text" name="salarioLiquido" size="18" maxlength="8">
+        <br><br>
     </form>
 
     <script>
-        classificaSalario(){
+        function classificaSalario(){
+            // Definição de variáveis
+            var js_qht, js_vht, js_inss, sBruto, sLiquido, descontoINSS;
 
+            // Associção de valores
+            js_qht = parseFloat(document.FormSalario.qntd_horas.value);
+            js_vht = parseFloat(document.FormSalario.valor_horas.value);
+            js_inss = parseFloat(document.FormSalario.inss.value);
+
+            // Verifica se os valores são válidos
+            if (isNaN(js_qht) || isNaN(js_vht) || isNaN(js_inss)) {
+                alert("Por favor, insira valores numéricos válidos.");
+                return;
+            }
+
+            // Processamento:
+            sBruto = js_qht * js_vht;
+            descontoINSS = sBruto * (js_inss / 100);
+            sLiquido = sBruto - descontoINSS;
+
+            // Atualização dos campos com os valores calculados
+            document.FormSalario.salarioBruto.value = sBruto.toFixed(2);
+            document.FormSalario.descontoINSS.value = descontoINSS.toFixed(2);
+            document.FormSalario.salarioLiquido.value = sLiquido.toFixed(2);
         }
+
     </script>
 </body>
 </html>
