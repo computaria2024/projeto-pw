@@ -17,7 +17,7 @@
         <br><br>
 
         <!--valor das hrs-->  
-        Digite o valor da hora trabalhada<br>(10 a 20): <br> <input placeholder="Valor por hora" class="input" type="text" name="valor_horas" size="18" maxlength="15">
+        Digite o valor da hora trabalhada<br>(10 a 20): <br> <input placeholder="Valor em reais" class="input" type="text" name="valor_horas" size="18" maxlength="15">
         <br><br>
 
         <!--Desconto inss-->  
@@ -61,6 +61,9 @@
         <p></p>
         Salário Líquido: <br> <input placeholder="Salário recebido" class="input" type="text" name="salarioLiquido" size="18" maxlength="8">
         <br><br>
+
+        <!-- Classificação do Salário -->
+        <p id="classificacaoSalario"></p>
     </form>
 
     <script>
@@ -88,8 +91,24 @@
             document.FormSalario.salarioBruto.value = sBruto.toFixed(2);
             document.FormSalario.descontoINSS.value = descontoINSS.toFixed(2);
             document.FormSalario.salarioLiquido.value = sLiquido.toFixed(2);
+
+            // Exibição de classificação de salário
+            var classificacao = '';
+            if(sLiquido > 6000){
+                classificacao = 'Salário Satisfatório';
+            } else if(sLiquido == 6000){
+                classificacao = 'Salário Médio';
+            } else {
+                classificacao = 'Salário Insatisfatório';
+            }
+
+            // Exibindo a classificação no elemento HTML
+            document.getElementById("classificacaoSalario").innerText = classificacao;
         }
 
+
+        // pior caso: 4500 bruto e 3825 liquido
+        // melhor caso: 9450 bruto e 8977,5 liquido
     </script>
 </body>
 </html>
