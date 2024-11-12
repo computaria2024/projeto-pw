@@ -3,7 +3,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* Garante que o body ocupe a altura total da tela */
     margin: 0;
     background: linear-gradient(to bottom, #4a90e2, #ffffff);
     font-family: Anton, sans-serif;
@@ -11,17 +11,21 @@ body {
 
 /* Estilo para o formulário */
 form {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-    width: 370px;
-    text-align: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 400px; /* Limita a largura máxima para centralizar em telas maiores */
+  box-sizing: border-box;
+  text-align: center;
+  margin: 0 auto; /* Centraliza o formulário horizontalmente */
+  margin-top: 10px;
 }
 
 /* Estilo para os elementos de entrada */
 .input {
-  width: 250px;
+  width: 100%; /* A largura dos inputs ajusta-se ao tamanho do formulário */
   padding: 12px;
   border: 2px solid #3498db;
   border-radius: 8px;
@@ -57,8 +61,12 @@ button {
     color: white;
     border-radius: 2rem;
     cursor: pointer;
-    width: 95.02px;
+    width: 80%; /* O botão ocupa toda a largura do formulário */
     height: 42.66px;
+    max-width: 130px; /* Limita a largura máxima do botão */
+
+    margin: 0 auto; /* Centraliza o botão horizontalmente */
+
     border: none;
     background-color: #3653f8;
     display: flex;
@@ -160,4 +168,18 @@ button {
   button .span-mother span:nth-child(8) {
     transition: 1s;
   }
+
+  /* Ajustes responsivos */
+@media (max-width: 500px) {
+  form {
+      padding: 15px;
+  }
+  .input {
+      font-size: 14px;
+  }
+  button {
+      width: 80px;
+      height: 40px;
+  }
+}
   
