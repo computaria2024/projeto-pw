@@ -1,29 +1,78 @@
+<!--
+
+Aluno: ÍGOR TAVARES ROCHA
+RA: 22304380
+
+-->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Cálculo de Média - Nome da Página</title>
+    <title>Cálculo de Média</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Cálculo de Média do Aluno</h1>
-        <form id="gradeForm">
-            <label for="name">Nome do Aluno:</label>
-            <input type="text" id="name" required>
-            <label for="nota1">Nota 1:</label>
-            <input type="number" id="nota1" min="0" max="100" required>
-            <label for="nota2">Nota 2:</label>
-            <input type="number" id="nota2" min="0" max="100" required>
-            <label for="nota3">Nota 3:</label>
-            <input type="number" id="nota3" min="0" max="100" required>
-            <label for="nota4">Nota 4:</label>
-            <input type="number" id="nota4" min="0" max="100" required>
-            <button type="button" onclick="calculateGrade()">Calcular Média</button>
-        </form>
-        <div id="result"></div>
-    </div>
+
+    <!-- Menu -->
+    <header>
+        <div class="menu">
+            <img src="logo.png" alt="Logo da Escola Xavier" class="logo">
+            <span class="school-name">Escola Xavier</span>
+            <nav>
+                <a href="#section-grade">Média</a>
+                <a href="#section-about">Mais sobre nós</a>
+                <a href="#section-enroll">Matricule-se já</a>
+                <a href="#section-contact">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Seção de Boas-vindas -->
+    <section id="section-welcome">
+        <div class="welcome-content">
+            <h1>Confira sua Aprovação</h1>
+        </div>
+    </section>
+
+    <!-- Seção de Cálculo da Média -->
+    <section id="section-grade">
+        <div class="container">
+            <h2>Cálculo de Média do Aluno</h2>
+            <form id="gradeForm">
+                <label for="name">Nome do Aluno:</label>
+                <input type="text" id="name" required>
+                <label for="nota1">Nota 1:</label>
+                <input type="number" id="nota1" min="0" max="100" required>
+                <label for="nota2">Nota 2:</label>
+                <input type="number" id="nota2" min="0" max="100" required>
+                <label for="nota3">Nota 3:</label>
+                <input type="number" id="nota3" min="0" max="100" required>
+                <label for="nota4">Nota 4:</label>
+                <input type="number" id="nota4" min="0" max="100" required>
+                <button type="button" onclick="calculateGrade()">Calcular Média</button>
+            </form>
+            <div id="result"></div>
+        </div>
+    </section>
+
+    <!-- Seção Sobre a Escola -->
+    <section id="section-about">
+        <div class="about-content">
+            <h2>História da Escola Xavier</h2>
+            <p>A Escola Xavier é dedicada a fornecer educação de qualidade, incentivando o desenvolvimento integral de nossos alunos...</p>
+        </div>
+    </section>
+
+    <!-- Seção de Contato -->
+    <footer id="section-contact">
+        <div class="contact-content">
+            <h2>Contato</h2>
+            <p>Telefone: (11) 1234-5678</p>
+            <p>Email: contato@escolaxavier.com</p>
+            <p>Endereço: Rua das Flores, 123 - São Paulo, SP</p>
+        </div>
+    </footer>
 
     <!--
     Oi professor Valdemir, basta alterar os scripts para cada tipo (if e else aninhados, switch, operador ternário) e testar o funcionamento.
